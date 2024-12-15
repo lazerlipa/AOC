@@ -1,4 +1,5 @@
 import { readFileSync } from 'fs';
+console.time('execution');
 let num = 0;
 const room = readFileSync('input', 'utf-8').trim().split('\n').map((line) => line.trim().split(''));
 const originalY = room.findIndex((row) => row.includes('^'))
@@ -49,5 +50,6 @@ function walk(populate = false) {
     return 0;
 }
 console.log(num);
+console.timeEnd('execution');
 
 
